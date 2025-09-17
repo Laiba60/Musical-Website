@@ -1,5 +1,6 @@
 
 import React from 'react'
+import bgImage from "../assets/images/image.jpeg";
 
 const ArtistProfile = () => {
   return (
@@ -53,13 +54,17 @@ const ArtistProfile = () => {
 <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuSMFZAdnaWOz4JgI3oftFtejKwG9mRQtnzL8b7frpshA761zPFBLOITU6uv4mNfb20T6RiZDf3KxsCKeCp4D4etgHfjpulGMRl_iwqtsXWmt7GJiQCmRLNmIuLsSEVd7CDRSV0BX0-H3Jdk3yxKfl_48rSZHjc3qbqy4D8fN5j6ZNuRYt_Pdi2GXUVycbR8-d87_CZZJ4o-fQ7MH85_tGImI9f43tfZ5mqDoVQxdmPoBmYAxEUxBxso3-VVKVUmNsGv71HWe8g9U")'}}></div>
 </div>
 </header>
-<div className="relative h-96 flex items-end p-8" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0qZbLj7cnMRvFc1xGJinXZVofYGYNeP7Pe0YHrRemC9FfngfGIeWooLz2LIX58DNZnFHKT53szSkRICbqLiJ0LWI_8zUMlwhLsqNlvEHl0eEuaRvxu0VFkFy9CJ_ZVf3TjynzUjyg08E5CJAHK8ulee5dKj8kLyRtYj8CoCZcyf3twjfIDCdb3avP0fZkAxJ6R5TkD9bjDaPDM4LaD4fGYdaHPrkeQyCu0KT7iSJq_6CCvuCKQUxa4vsZg2RqO2J2qxPuVO3gq8s"); background-size: cover; background-position: center'}}>
-<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-<div className="relative z-10">
-<h1 className="text-7xl font-black">Olivia Hayes</h1>
-<p className="text-gray-300 mt-2">1,234,567 monthly listeners</p>
+<div
+  className="relative h-96 flex items-end p-8 bg-cover bg-center"
+ style={{ backgroundImage: `url(${bgImage})` }}
+>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+  <div className="relative z-10">
+    <h1 className="text-7xl font-black">Olivia Hayes</h1>
+    <p className="text-gray-300 mt-2">1,234,567 monthly listeners</p>
+  </div>
 </div>
-</div>
+
 <div className="p-8">
 <div className="flex items-center gap-8 mb-8">
 <button className="bg-[var(--primary-color)] p-4 rounded-full hover:bg-green-700
