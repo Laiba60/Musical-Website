@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+import Home from "./pages/Home";
+import ArtistProfile from "./pages/ArtistProfile";
+import Playlist from "./pages/Playlist";
+import SearchResult from "./pages/SearchResult";
+
+
+export default function App() {
+  const [dark, setDark] = useState(() =>
+    document.documentElement.classList.contains("dark")
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  function toggleTheme() {
+    setDark((d) => !d);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+        <Routes>
+          <Route path="/" element={<Home />} />
+           <Route path="/artistprofile" element={<ArtistProfile />} />
+        <Route path="/playlist" element={<Playlist />} />
+        <Route path="/searchresult" element={<SearchResult />} />
 
-export default App
+        </Routes>
+      
+      
+    </div>
+  );
+}
