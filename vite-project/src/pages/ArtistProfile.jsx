@@ -62,7 +62,8 @@ const ArtistProfile = () => {
 </div>
 <div className="p-8">
 <div className="flex items-center gap-8 mb-8">
-<button className="bg-[var(--primary-color)] p-4 rounded-full hover-bg-primary-darker transition-colors shadow-lg">
+<button className="bg-[var(--primary-color)] p-4 rounded-full hover:bg-green-700
+ transition-colors shadow-lg">
 <span className="material-symbols-outlined text-4xl">play_arrow</span>
 </button>
 <button className="border border-white/50 text-white font-bold py-2 px-6 rounded-full hover:border-white transition-colors">
