@@ -1,37 +1,112 @@
 import React from 'react'
-
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 const SearchResult = () => {
+   const [menuOpen, setMenuOpen] = useState(false);
   return (
    <div className="relative flex h-auto min-h-screen w-full flex-col bg-[#141118] dark group/design-root overflow-x-hidden"style={{ fontFamily: '"Spline Sans", "Noto Sans", sans-serif' }}
 >
 <div className="layout-container flex h-full grow flex-col">
-<header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#302839] px-10 py-4">
-<div className="flex items-center gap-10">
-<div className ="flex items-center gap-3 text-white">
+ <header className="flex items-center justify-between border-b border-[#302839] px-6 py-4 md:px-10">
+      {/* Left: Logo + Nav */}
+      <div className="flex items-center gap-6">
+        {/* Logo */}
+        <h2 className="text-white text-xl font-bold leading-tight tracking-[-0.015em]">
+          TuneIn
+        </h2>
 
-<h2 className="text-white text-xl font-bold leading-tight tracking-[-0.015em]">TuneIn</h2>
-</div>
-<div className="flex items-center gap-8">
-<nav className="flex items-center gap-8">
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Home</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/artistprofile">Artist Profile</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/playlist">Playlist</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/searchresult">Search Result</a>
-</nav>
-</div>
-</div>
-<div className="flex flex-1 items-center justify-end gap-6">
-<label className="flex flex-col min-w-40 !h-10 max-w-64">
-<div className="flex w-full flex-1 items-stretch rounded-full h-full bg-[#302839]">
-<div className="text-[#ab9db9] flex items-center justify-center pl-4">
-<span className="material-symbols-outlined !text-2xl"> search </span>
-</div>
-<input className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-[#ab9db9] px-4 text-base font-normal leading-normal" placeholder="Search" value=""/>
-</div>
-</label>
-<div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwZVSVY-Z8JktbjjxKaRVeeihuVYDqpdewlvfj1BGYVtGMHfgI85zxI8zJ46YNH6RuideJYHmFw7obH6MMng7ELOqSbf4ynS6xVuYmIFJtQ-TNmtG0DQeQoDx60-UIUlL241W8xSL6p1WnCDWY6A5p8sC191TR_cDRBy8JUnCFWqpnofxfHCP5QKmaR70cFmfLXPRiOznmUNWlVjeLMqyoA4Ayh8VbHNAxGW7yl2CXkKQRmrdZcPsPeKgW7LR50_dR0LGeZK6Kp04")'}}></div>
-</div>
-</header>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="#"
+          >
+            Home
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/artistprofile"
+          >
+            Artist Profile
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/playlist"
+          >
+            Playlist
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/searchresult"
+          >
+            Search Result
+          </a>
+        </nav>
+      </div>
+
+      {/* Right: Search + Avatar + Hamburger */}
+      <div className="flex items-center gap-4 md:gap-6">
+        {/* Search */}
+        <label className="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+          <div className="flex w-full items-stretch rounded-full h-full bg-[#302839]">
+            <div className="text-[#ab9db9] flex items-center justify-center pl-4">
+              <span className="material-symbols-outlined !text-2xl"> search </span>
+            </div>
+            <input
+              className="form-input flex w-full min-w-0 flex-1 rounded-full text-white focus:outline-0 border-none bg-transparent h-full placeholder:text-[#ab9db9] px-4 text-base"
+              placeholder="Search"
+            />
+          </div>
+        </label>
+
+        {/* Avatar */}
+        <div
+          className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+          style={{
+            backgroundImage:
+              'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwZVSVY-Z8JktbjjxKaRVeeihuVYDqpdewlvfj1BGYVtGMHfgI85zxI8zJ46YNH6RuideJYHmFw7obH6MMng7ELOqSbf4ynS6xVuYmIFJtQ-TNmtG0DQeQoDx60-UIUlL241W8xSL6p1WnCDWY6A5p8sC191TR_cDRBy8JUnCFWqpnofxfHCP5QKmaR70cFmfLXPRiOznmUNWlVjeLMqyoA4Ayh8VbHNAxGW7yl2CXkKQRmrdZcPsPeKgW7LR50_dR0LGeZK6Kp04")',
+          }}
+        ></div>
+
+        {/* Hamburger (mobile only) */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <nav className="absolute top-16 left-0 w-full bg-[#1c1722] flex flex-col items-start gap-4 p-6 md:hidden z-50">
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="#"
+          >
+            Home
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/artistprofile"
+          >
+            Artist Profile
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/playlist"
+          >
+            Playlist
+          </a>
+          <a
+            className="text-white/80 hover:text-white text-sm font-medium transition-colors"
+            href="/searchresult"
+          >
+            Search Result
+          </a>
+        </nav>
+      )}
+    </header>
 <div className="px-40 flex flex-1 justify-center py-8">
 <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
 <div className="px-4 pb-6">

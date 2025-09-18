@@ -1,42 +1,43 @@
 
 import React from 'react'
-
+import { useState } from "react";
 const Home = () => {
+    const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-[#121212] font-['Spline_Sans']">
 <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
 <div className="flex h-full grow flex-col">
-<header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-10 py-4">
-<div className="flex items-center gap-10">
-<div className="flex items-center gap-3 text-white">
+ <header className="flex flex-wrap items-center justify-between border-b border-white/10 px-4 sm:px-6 md:px-10 py-3 sm:py-4">
+      {/* Left: Logo */}
+      <h1 className="text-white text-lg sm:text-xl font-bold">TuneFlow</h1>
 
-<h1 className="text-white text-xl font-bold">TuneFlow</h1>
-</div>
-<nav className="flex items-center gap-8">
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Home</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/artistprofile">Artist Profile</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/playlist">Playlist</a>
-<a className="text-white/80 hover:text-white text-sm font-medium transition-colors" href="/searchresult">Search Result</a>
-</nav>
-</div>
-<div className="flex flex-1 items-center justify-end gap-4">
-<label className="relative flex w-64 items-center">
-<span className="material-symbols-outlined absolute left-3 text-white/50"> search </span>
-<input className="form-input w-full rounded-full border-none bg-white/5 py-2 pl-10 pr-4 text-sm text-white placeholder:text-white/50 focus:ring-2 focus:ring-[var(--primary-color)]" placeholder="Search" type="search"/>
-</label>
-<button className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/5 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
-<span className="material-symbols-outlined text-xl"> language </span>
-</button>
-<div
-  className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-  style={{
-    backgroundImage:
-      'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCduHcKByrODZr4rq-6PWwstkWcVuwVLp38o7eXCJKevJNREZ14LN9xa-7Hiv0Pu7txcCRluT_RIsxNE7tBS0mVnRLR3j48HW6CdhGVO_qlffejGU-dZ9VWHU6fju2Ybu9jrBPysiqtPKlGCajqrS08RZ8Ur7rlzkIpRtgYpuDDz7pI1bW8aJapmxLxfT4OXMEXLW0eswn6xPgI-fT25EKywGE5Ys1TWEdN377Xu_s2F0MupkB-0D6_bMYHbSOVTiJr7TZHn5pfqF4")',
-  }}
-></div>
+      {/* Desktop Nav */}
+      <nav className="hidden md:flex items-center gap-6">
+        <a className="text-white/80 hover:text-white text-sm font-medium" href="#">Home</a>
+        <a className="text-white/80 hover:text-white text-sm font-medium" href="/artistprofile">Artist Profile</a>
+        <a className="text-white/80 hover:text-white text-sm font-medium" href="/playlist">Playlist</a>
+        <a className="text-white/80 hover:text-white text-sm font-medium" href="/searchresult">Search Result</a>
+      </nav>
 
-</div>
-</header>
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-white"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="material-symbols-outlined">menu</span>
+      </button>
+
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="absolute top-14 left-0 w-full bg-[#121212] border-t border-white/10 flex flex-col items-start gap-4 p-4 md:hidden">
+          <a className="text-white/80 hover:text-white text-sm font-medium" href="#">Home</a>
+          <a className="text-white/80 hover:text-white text-sm font-medium" href="/artistprofile">Artist Profile</a>
+          <a className="text-white/80 hover:text-white text-sm font-medium" href="/playlist">Playlist</a>
+          <a className="text-white/80 hover:text-white text-sm font-medium" href="/searchresult">Search Result</a>
+        </div>
+      )}
+    </header>
+
 <main className="flex-1 px-10 py-8">
 <div className="mx-auto max-w-7xl">
 <section className="mb-12">
