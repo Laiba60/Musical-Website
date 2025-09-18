@@ -13,7 +13,10 @@ const Playlist = () => {
 <path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
 </svg>
 </div>
-<h2 className="text-white text-xl font-bold">SoundMix</h2>
+<h2 className="text-white text-xl font-bold">
+  <a href="/" className="hover:text-white/80 transition-colors">SoundMix</a>
+</h2>
+
 </div>
 <nav className="flex flex-col gap-6 mt-4">
 <div className="flex flex-col gap-2">
@@ -24,7 +27,10 @@ const Playlist = () => {
 </a>
 <a className="flex items-center gap-4 rounded-md p-2 hover:bg-[#1a1a1a] transition-colors" href="#">
 <span className="material-symbols-outlined text-gray-400">mic_external_on</span>
-<span>Artists</span>
+<a href="/artistprofile" className="hover:text-white/80 transition-colors">
+  <span>Artists</span>
+</a>
+
 </a>
 <a className="flex items-center gap-4 rounded-md p-2 hover:bg-[#1a1a1a] transition-colors" href="#">
 <span className="material-symbols-outlined text-gray-400">album</span>
