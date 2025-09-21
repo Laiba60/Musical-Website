@@ -24,9 +24,10 @@ const DisplayHome = () => {
       <SongsItem
         key={index}
         name={item.name}
+         id={item.id} 
         desc={item.desc}
         image={item.image}
-        bgColor={item.bgColor} // optional if you want color
+        bgColor={item.bgColor} 
       />
     ))}
   </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from "react";
 import NavBar from './NabBar'
 import { useParams } from 'react-router-dom'
 import {albumsData} from '../assets/images/assets'  
