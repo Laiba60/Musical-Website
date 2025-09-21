@@ -4,10 +4,12 @@ import { useParams } from 'react-router-dom'
 import {albumsData} from '../assets/images/assets'  
 import { assets } from "../assets/images/assets"; 
 import {songsData} from '../assets/images/assets' 
+import {PlayerContext} from '../context/PlayerContext'
 
 const DisplayAlbum = () => {
     const {id}=useParams();
    const albumData=albumsData[id];
+   const {playWithId}=useContext(PlayerContext);
    console.log(albumsData);
   return (
     <>
@@ -43,7 +45,7 @@ const DisplayAlbum = () => {
    </div>
    <hr />
    {songsData.map((item,index)=>(
-    <div key={index} className="grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-[#a7a7a7] bg-[#ffffff2b] cursor-pointer">
+    <div onClick={()=>playWithId(item.id)} key={index} className="grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-[#a7a7a7] bg-[#ffffff2b] cursor-pointer">
         <p className="text-white">
         <b className="mr-4 text-[#a7a7a7]">{index+1}</b>
         <img src={item.image} alt="" className="w-10 inline mr-5"/>
