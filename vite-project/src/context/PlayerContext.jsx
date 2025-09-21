@@ -52,7 +52,7 @@ const PlayerContextProvider = (props) => {
 
   const next = () => {
     if (track.id < songsData.length - 1) {
-      const newTrack = songsData[track.id + 1]; // ✅ FIXED
+      const newTrack = songsData[track.id + 1]; 
       setTrack(newTrack);
       setTimeout(() => {
         audioRef.current.play();

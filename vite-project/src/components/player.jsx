@@ -16,11 +16,11 @@ const Player = () => {
     seekSong,
   } = useContext(PlayerContext);
 
-  if (!track) return null; // ✅ safety
+  if (!track) return null; 
 
   return (
     <div className="h-[10%] bg-black flex justify-between items-center text-white px-4">
-      {/* Track Info */}
+     
       <div className="hidden lg:flex gap-4">
         <img className="w-12" src={track.image} alt="track" />
 
@@ -30,7 +30,7 @@ const Player = () => {
         </div>
       </div>
 
-      {/* Controls */}
+     
       <div className="flex flex-col items-center gap-1 m-auto">
         <div className="flex gap-4">
           <img className="w-4 cursor-pointer" src={assets.shuffle_icon} alt="" />
@@ -61,7 +61,7 @@ const Player = () => {
         </div>
       </div>
 
-      {/* Extra Controls */}
+     
       <div className="hidden lg:flex gap-2 items-center opacity-75">
         <img src={assets.plays_icon} alt="" className="w-5" />
         <img src={assets.mic_icon} alt="" className="w-5" />
@@ -69,7 +69,7 @@ const Player = () => {
         <img src={assets.speaker_icon} alt="" className="w-5" />
         <img src={assets.volume_icon} alt="" className="w-5" />
         <div className="w-20 bg-slate-50 h-1 rounded"></div>
-        <img src={assets.mini_player_icon} alt="" className="w-5" /> {/* ✅ fixed */}
+        <img src={assets.mini_player_icon} alt="" className="w-5" /> 
         <img src={assets.zoom_icon} alt="" className="w-5" />
       </div>
     </div>

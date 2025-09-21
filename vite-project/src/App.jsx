@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';   // <-- import useContext
+import React, { useContext } from 'react';   
 import Sidebar from './components/Sidebar';
-import Player from './components/Player';    // also check filename case
+import Player from './components/Player';    
 import Display from './components/Display';
-import { PlayerContext } from './context/PlayerContext'; // <-- import context
+import { PlayerContext } from './context/PlayerContext'; 
 
 const App = () => {
-  const { audioRef,track } = useContext(PlayerContext); // <-- destructure audioRef from context
+  const { audioRef,track } = useContext(PlayerContext); 
 
   return (
     <div className="h-screen bg-black"> 

@@ -13,8 +13,7 @@ const Display = () => {
   const bgColor =
     isAlbum && albumsData[albumId - 1]
       ? albumsData[albumId - 1].bgColor
-      : "#121212"; // fallback
-
+      : "#121212"; 
   useEffect(() => {
     if (isAlbum && displayRef.current) {
       displayRef.current.style.background = `linear-gradient(180deg, ${bgColor} 0%, #121212 100%)`;
