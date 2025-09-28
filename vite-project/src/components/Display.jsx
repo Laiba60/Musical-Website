@@ -21,9 +21,9 @@ const Display = () => {
   }, [isAlbum, bgColor]);
 
   return (
-   <div
+ <div
   ref={displayRef}
-  className="flex-1 m-2 px-6 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0"
+  className="flex-1 m-2 px-6 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0 pb-16"
 >
   <Routes>
     <Route path="/" element={<DisplayHome />} />

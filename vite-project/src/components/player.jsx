@@ -19,7 +19,10 @@ const Player = () => {
   if (!track) return null; 
 
   return (
-    <div className="h-[10%] bg-black flex justify-between items-center text-white px-4">
+ <div
+    className="fixed bottom-0 left-0 w-full z-50 h-16 bg-black flex justify-between items-center text-white px-4"
+    style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+  >
      
       <div className="hidden lg:flex gap-4">
         <img className="w-12" src={track.image} alt="track" />
